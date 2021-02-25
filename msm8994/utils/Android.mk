@@ -12,6 +12,9 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     liblog
 
+LOCAL_HEADER_LIBRARIES := \
+    libhardware_headers
+
 LOCAL_SRC_FILES += \
     loc_log.cpp \
     loc_cfg.cpp \
@@ -52,6 +55,8 @@ LOCAL_COPY_HEADERS:= \
    loc_misc_utils.h
 
 LOCAL_MODULE := libgps.utils
+LOCAL_HEADER_LIBRARIES := libhardware_headers
+LOCAL_EXPORT_HEADER_LIBRARY_HEADERS := libhardware_headers
 
 LOCAL_MODULE_TAGS := optional
 

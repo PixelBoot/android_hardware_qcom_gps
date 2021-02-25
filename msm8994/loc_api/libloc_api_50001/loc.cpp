@@ -44,6 +44,7 @@
 #include <errno.h>
 #include <LocDualContext.h>
 #include <cutils/properties.h>
+#include <unistd.h>
 
 using namespace loc_core;
 
