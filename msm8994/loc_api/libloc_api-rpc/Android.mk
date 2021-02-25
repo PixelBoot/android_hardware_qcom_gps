@@ -35,16 +35,6 @@ LOCAL_STATIC_LIBRARIES:= libcommondefs-rpc
 
 
 
-LOCAL_COPY_HEADERS_TO:= libloc_api-rpc/inc
-LOCAL_COPY_HEADERS:= \
-	$(RPC_INC)/loc_api_cb.h \
-	$(RPC_INC)/loc_api_common.h \
-	$(RPC_INC)/loc_api.h \
-	$(RPC_INC)/loc_api_fixup.h \
-	$(RPC_INC)/loc_apicb_appinit.h \
-	inc/debug.h \
-	inc/loc_api_rpc_glue.h
-
 LOCAL_C_INCLUDES:= \
 	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/inc \
@@ -56,6 +46,11 @@ LOCAL_MODULE:= libloc_api-rpc
 LOCAL_MODULE_OWNER := qcom
 
 include $(BUILD_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libloc_api-rpc_headers
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH/$(RPC_INC))
+include $(BUILD_HEADER_LIBRARY)
 
 endif
 endif
